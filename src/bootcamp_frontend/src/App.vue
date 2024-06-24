@@ -1,15 +1,18 @@
-<script setup>
-import { ref } from 'vue';
-// let greeting = ref('');
+<script>
+export default{
+  data(){
+    return{
+      licznik: 0
+    }
+  },
+  methods:{
+      increase(){
+        this.licznik++
+      }
+  }
 
-// async function handleSubmit(e) {
-//   e.preventDefault();
-//   const target = e.target;
-//   const name = target.querySelector('#name').value;
-//   await bootcamp_backend.greet(name).then((response) => {
-//     greeting.value = response;
-//   });
-// }
+}
+// import { ref } from 'vue';
 </script>
 
 <template>
@@ -21,8 +24,10 @@ import { ref } from 'vue';
       <label for="name">Enter your name: &nbsp;</label>
       <input id="name" alt="Name" type="text" />
       <button type="submit">Click Me!</button>
-      <h1>Działa</h1>
     </form>
     <section id="greeting">Hello</section>
+    <br/>
+    <button @click="increase">Increase</button>
+    {{ licznik }}
   </main>
 </template>
